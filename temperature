@@ -1,0 +1,4 @@
+#!/bin/bash
+
+
+( /usr/local/bin/node ./temperature.js | sudo -u veeplant ssh -p 50022 foo.com 'cat >> vegeful/temperature`date +%Y-%m`.csv' ) 2>&1 | sudo -u veeplant ssh -p 50022 foo.com 'cat > vegeful/temperature_err.txt'

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+( fswebcam --config ./tweet.fswebcam.config | sudo -u veeplant ssh -p 50022 foo.com dd of=vegeful/`date +%Y-%m-%d_%H%M`.jpg ) 2>&1 | sudo -u veeplant ssh -p 50022 foo.com 'cat > vegeful/takepicture_err.txt'
